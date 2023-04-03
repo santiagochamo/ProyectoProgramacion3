@@ -2,16 +2,16 @@ import React, { Component } from 'react'
 import FavMoovieCard from "../FavMoovieCard/FavMoovieCard"
 import PopMoovieCard from "../PopMoovieCard/PopMoovieCard"
 //nos falta la apikey
-let tvPopular = "https://api.themoviedb.org/3/tv/get-popular-tv-shows?api_key="
-let pelisEnCartel = "https://api.themoviedb.org/3/movie/popular?api_key="
+let tvPopular = "https://api.themoviedb.org/3/tv/get-popular-tv-shows?api_key=32a583d4ccec7f702faad954f990f1ba"
+let pelisEnCartel = "https://api.themoviedb.org/3/movie/popular?api_key=32a583d4ccec7f702faad954f990f1ba"
 
 class Peliculas extends Component {
 
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state = {
-            seriesPopulares = [],
-            peliculasEnCartel = []
+            seriesPopulares : [],
+            peliculasEnCartel : []
 
         }
     }
@@ -39,7 +39,7 @@ class Peliculas extends Component {
             <h2>Peliculas Favoritas</h2>
             <div className="card-container">
                 {
-                    this.state.seriesPopulares === 0 ?
+                    this.state.seriesPopulares.length === 0 ?
                     <p>Cargando...</p>
                     :
                     this.state.seriesPopulares.map((Serie, idx)=>
@@ -51,7 +51,7 @@ class Peliculas extends Component {
             <h2>Peliculas En Cartel</h2>
             <div className="card-container">
                  {
-                    this.state.peliculasEnCartel === 0 ?
+                    this.state.peliculasEnCartel.length === 0 ?
                     <p>Cargando...</p>
                     :
                     this.state.peliculasEnCartel.map((PeliPop, idx)=>
