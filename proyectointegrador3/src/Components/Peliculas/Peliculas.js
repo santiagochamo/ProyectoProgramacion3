@@ -10,8 +10,8 @@ class Peliculas extends Component {
     constructor(){
         super()
         this.state = {
-            seriesPopulares = [],
-            peliculasEnCartel = []
+            seriesPopulares: [],
+            peliculasEnCartel: []
 
         }
     }
