@@ -1,0 +1,12 @@
+.mostrar{
+    line-height: 1em;
+    height: auto;
+    max-width: 100%;
+}
+
+.ocultar {
+    overflow: hidden;
+    line-height: 1em;
+    height: 0em;
+    max-width: 100%;
+}
