@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
+import './style.css';
 
 class SeriesCard extends Component {
 
@@ -32,9 +33,9 @@ class SeriesCard extends Component {
                     </Link>
                
                 <h2 className=''>{this.props.seriePopular.name}</h2>
-                <div className=''>
+                <div>
                     <p onClick={() => this.mostrarDescripcionSerie()}> {this.state.textoDescripcion} </p>
-                    <p>{this.props.seriePopular.overview}</p>
+                    <p className={this.state.descripcion}>{this.props.seriePopular.overview}</p>
                     
                 </div>
                 <div className=''>
