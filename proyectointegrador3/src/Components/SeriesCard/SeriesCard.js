@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
+import './style.css';
 
 class SeriesCard extends Component {
 
@@ -27,18 +28,18 @@ class SeriesCard extends Component {
         return (
             <article className=''>
               
-                    <Link to={`/DetallePelicula/DetallePelicula/id/${this.props.seriePopular.id}`}>
-                        <img src={`https://image.tmdb.org/t/p/w342/${this.props.seriePopular.poster_path}`} alt="Cartel de película" />
+                    <Link to={`/DetalleSerie/DetalleSerie/id/${this.props.seriePopular.id}`}>
+                        <img src={`https://image.tmdb.org/t/p/w342/${this.props.seriePopular.poster_path}`} alt="Cartel de serie" />
                     </Link>
                
                 <h2 className=''>{this.props.seriePopular.name}</h2>
-                <div className=''>
+                <div>
                     <p onClick={() => this.mostrarDescripcionSerie()}> {this.state.textoDescripcion} </p>
-                    <p>{this.props.seriePopular.overview}</p>
+                    <p className={this.state.descripcion}>{this.props.seriePopular.overview}</p>
                     
                 </div>
                 <div className=''>
-                    <Link to={`/DetallePelicula/DetallePelicula/id/${this.props.seriePopular.id}`}>
+                    <Link to={`/DetalleSerie/DetalleSerie/id/${this.props.seriePopular.id}`}>
                         <button>Ir a detalle</button>
                     </Link>
                 </div>
