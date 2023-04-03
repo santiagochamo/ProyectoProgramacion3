@@ -22,7 +22,7 @@ function App() {
           <Route  path="" component={NotFound}/>
         </Switch>
       
-    
+        <Footer />
    
       </>
   );
