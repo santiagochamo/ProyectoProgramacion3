@@ -36,7 +36,7 @@ class Peliculas extends Component {
         return (
             <>
 
-            <h2>Peliculas Favoritas</h2>
+            <h2>Series Populares</h2>
             <div className="card-container">
                 {
                     this.state.seriesPopulares === 0 ?
