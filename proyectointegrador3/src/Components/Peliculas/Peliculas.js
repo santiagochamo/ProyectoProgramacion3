@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import FavMoovieCard from "../FavMoovieCard/FavMoovieCard"
+import SeriesCard from "..//SeriesCard/SeriesCard"
 import PopMoovieCard from "../PopMoovieCard/PopMoovieCard"
 //nos falta la apikey
-let tvPopular = "https://api.themoviedb.org/3/tv/get-popular-tv-shows?api_key=32a583d4ccec7f702faad954f990f1ba"
+let tvPopular = "https://api.themoviedb.org/3/tv/popular?api_key=32a583d4ccec7f702faad954f990f1ba"
 let pelisEnCartel = "https://api.themoviedb.org/3/movie/popular?api_key=32a583d4ccec7f702faad954f990f1ba"
 
 class Peliculas extends Component {
@@ -10,8 +10,8 @@ class Peliculas extends Component {
     constructor(props){
         super(props)
         this.state = {
-            seriesPopulares : [],
-            peliculasEnCartel : []
+            seriesPopulares: [],
+            peliculasEnCartel: []
 
         }
     }
@@ -43,7 +43,7 @@ class Peliculas extends Component {
                     <p>Cargando...</p>
                     :
                     this.state.seriesPopulares.map((Serie, idx)=>
-                    <FavMoovieCard key={Serie.name + idx} seriePopular={Serie} />
+                    <SeriesCard key={Serie.name + idx} seriePopular={Serie} />
                     )
 
                 }

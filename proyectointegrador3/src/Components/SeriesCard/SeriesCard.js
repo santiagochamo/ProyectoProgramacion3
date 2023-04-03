@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 
-class FavMoovieCard extends Component {
+class SeriesCard extends Component {
 
     constructor(props){
         super(props)
@@ -47,4 +47,4 @@ class FavMoovieCard extends Component {
         )
     }
 }
-export default  FavMoovieCard
+export default   SeriesCard
