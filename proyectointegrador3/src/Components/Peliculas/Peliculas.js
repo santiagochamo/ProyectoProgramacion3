@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import FavMoovieCard from "../FavMoovieCard/FavMoovieCard"
 import PopMoovieCard from "../PopMoovieCard/PopMoovieCard"
 //nos falta la apikey
-let pelisFavoritas = "https://api.themoviedb.org/3/movie/top_rated?api_key="
+let tvPopular = "https://api.themoviedb.org/3/tv/get-popular-tv-shows?api_key="
 let pelisEnCartel = "https://api.themoviedb.org/3/movie/popular?api_key="
 
 class Peliculas extends Component {
@@ -10,16 +10,16 @@ class Peliculas extends Component {
     constructor(){
         super()
         this.state = {
-            peliculasFav = [],
+            seriesPopulares = [],
             peliculasEnCartel = []
 
         }
     }
     componentDidMount(){
-        fetch(pelisFavoritas)
+        fetch(tvPopular)
             .then(res => res.json())
                 .then(data => this.setState({
-                    peliculasFav: data.results,
+                    seriesPopulares: data.results,
                 }))
             .catch(e => console.log(e))
         
@@ -39,11 +39,11 @@ class Peliculas extends Component {
             <h2>Peliculas Favoritas</h2>
             <div className="card-container">
                 {
-                    this.state.peliculasFav === 0 ?
+                    this.state.seriesPopulares === 0 ?
                     <p>Cargando...</p>
                     :
-                    this.state.peliculasFav.map((PeliFav, idx)=>
-                    <FavMoovieCard key={PeliFav.name + idx} peliculaFav={PeliFav} />
+                    this.state.seriesPopulares.map((Serie, idx)=>
+                    <FavMoovieCard key={Serie.name + idx} seriePopular={Serie} />
                     )
 
                 }
