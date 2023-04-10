@@ -4,9 +4,12 @@ import NavBar from "../../Components/NavBar/NavBar"
 
 function Home() {
     return (
+        <>
+            <NavBar />
         <h1>
             <Peliculas />
         </h1>
+        </>
     )
 }
 

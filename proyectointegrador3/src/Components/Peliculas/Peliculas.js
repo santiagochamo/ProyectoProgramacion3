@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import SeriesCard from "..//SeriesCard/SeriesCard"
+import SeriesCard from "../SeriesCard/SeriesCard"
 import PopMoovieCard from "../PopMoovieCard/PopMoovieCard"
 //nos falta la apikey
 let tvPopular = "https://api.themoviedb.org/3/tv/popular?api_key=32a583d4ccec7f702faad954f990f1ba"
