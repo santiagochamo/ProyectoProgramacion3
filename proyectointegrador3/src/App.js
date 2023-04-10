@@ -6,6 +6,7 @@ import DetalleSerie from "./Screens/DetalleSerie/DetalleSerie"
 import NotFound from "./Screens/NotFound/NotFound"
 import Header from "./Components/Header/Header"
 import Footer from "./Components/Footer/Footer"
+
 //importe de componentes 
 
 function App() {
@@ -14,7 +15,8 @@ function App() {
       <>
 
     
-      
+      <Header/>
+
         <Switch>
           <Route exact="true" path="/" component={Home}/>
           <Route  path="/DetallePelicula/DetallePelicula/id/:id" component={DetallePelicula}/>
