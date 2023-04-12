@@ -26,6 +26,7 @@ class Buscador extends Component {
         let filtro = this.metodoQueFiltra(this.state.valorInput, this.props.fuente)
         this.props.actualizador(filtro)
         
+        
 
     }
       )
