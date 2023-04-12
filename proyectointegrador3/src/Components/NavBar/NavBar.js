@@ -7,7 +7,7 @@ class NavBar extends Component {
     return (
       <>
       <header className="">
-        <img src="./proyectoProgramacion3/ProyectoProgramacion3/proyectointegrador3/src/Components/NavBar/img/download.jpg" />
+        <img src="./proyectoProgramacion3/ProyectoProgramacion3/proyectointegrador3/src/Components/NavBar/img/download.jpg" alt="" />
         <Buscador />
         <h3><a href="./">Home</a></h3>
         <Link to={`../../../../Screens/Favoritos/Favoritos`}>
