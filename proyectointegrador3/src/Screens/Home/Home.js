@@ -5,7 +5,7 @@ import Buscador from '../../Components/Buscador/Buscador'
 
 let tvPopular = "https://api.themoviedb.org/3/tv/popular?api_key=32a583d4ccec7f702faad954f990f1ba"
 let pelisEnCartel = "https://api.themoviedb.org/3/movie/popular?api_key=32a583d4ccec7f702faad954f990f1ba"
-let search = "https://api.themoviedb.org/3/search/multi?api_key=32a583d4ccec7f702faad954f990f1ba&query="
+ //let search = "https://api.themoviedb.org/3/search/multi?api_key=32a583d4ccec7f702faad954f990f1ba&query="
 
 
 class Home extends Component {
@@ -22,6 +22,7 @@ class Home extends Component {
             .then(res => res.json())
                 .then(data => this.setState({
                     seriesPopulares: data.results,
+                    backup: data.results
                     
                 }))
             .catch(e => console.log(e))
@@ -30,16 +31,12 @@ class Home extends Component {
             .then(res => res.json())
                 .then(data => this.setState({
                     peliculasEnCartel: data.results,
+                    backup: data.results
     
                 }))
             .catch(e => console.log(e)) 
 
-        fetch(search)
-            .then(res => res.json())
-                .then(data => this.setState({
-                    backup: data.results
-                }))
-            .catch(e => console.log(e)) 
+        
     }
 
     actualizadorDeEstado(data){
