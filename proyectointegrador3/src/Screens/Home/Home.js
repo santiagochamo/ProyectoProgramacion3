@@ -5,7 +5,7 @@ import Buscador from '../../Components/Buscador/Buscador'
 
 let tvPopular = "https://api.themoviedb.org/3/tv/popular?api_key=32a583d4ccec7f702faad954f990f1ba"
 let pelisEnCartel = "https://api.themoviedb.org/3/movie/popular?api_key=32a583d4ccec7f702faad954f990f1ba"
- //let search = "https://api.themoviedb.org/3/search/multi?api_key=32a583d4ccec7f702faad954f990f1ba&query="
+ let search = "https://api.themoviedb.org/3/search/multi?api_key=32a583d4ccec7f702faad954f990f1ba&query="
 
 
 class Home extends Component {
@@ -14,15 +14,14 @@ class Home extends Component {
         this.state = {
             seriesPopulares: [],
             peliculasEnCartel: [],
-            backup: []
+            resultadosBusqueda: []
         }
     }
     componentDidMount(){
         fetch(tvPopular)
             .then(res => res.json())
                 .then(data => this.setState({
-                    seriesPopulares: data.results,
-                    backup: data.results
+                    seriesPopulares: data.results
                     
                 }))
             .catch(e => console.log(e))
@@ -30,8 +29,7 @@ class Home extends Component {
         fetch(pelisEnCartel)
             .then(res => res.json())
                 .then(data => this.setState({
-                    peliculasEnCartel: data.results,
-                    backup: data.results
+                    peliculasEnCartel: data.results
     
                 }))
             .catch(e => console.log(e)) 
@@ -46,6 +44,15 @@ class Home extends Component {
         })
       }
 
+      buscarEnLaApi(valorInput){
+          fetch(search+valorInput)
+          .then(resp => resp.json())
+          .then(data => this.setState({
+              resultadosBusqueda:data.results
+          }))
+          .catch(err => console.log(err))
+      }
+
     
 
             
@@ -55,13 +62,25 @@ class Home extends Component {
             <>
                
 
-                <Buscador actualizador = {(data)=> this.actualizadorDeEstado(data)}
-                          fuente={this.state.backup} 
+                <Buscador 
+                    metodoQueBusca={ valorInput => this.buscarEnLaApi(valorInput)}
                 />
-            <h2>Series Populares</h2>
-            <Peliculas data={this.state.seriesPopulares} isMovie={false}/>
-            <h2>Peliculas En Cartel</h2>
-            <Peliculas data={this.state.peliculasEnCartel} isMovie={true}/>
+                {
+                    this.state.resultadosBusqueda.length > 0 ?
+                    <>
+                        <h2>Resultados de busqueda</h2>
+                        <Peliculas data={this.state.resultadosBusqueda} isMovie={true}/>
+                        
+                    </>
+                    
+                    :
+                    <>
+                        <h2>Series Populares</h2>
+                        <Peliculas data={this.state.seriesPopulares} isMovie={false}/>
+                        <h2>Peliculas En Cartel</h2>
+                        <Peliculas data={this.state.peliculasEnCartel} isMovie={true}/>
+                    </>
+                }
             </>
         )
     }

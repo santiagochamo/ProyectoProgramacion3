@@ -22,13 +22,7 @@ class Buscador extends Component {
       this.setState({
         valorInput: event.target.value
       },
-      () => {
-        let filtro = this.metodoQueFiltra(this.state.valorInput, this.props.fuente)
-        this.props.actualizador(filtro)
-        
-        
-
-    }
+      () => this.props.metodoQueBusca(this.state.valorInput)
       )
   }
 
