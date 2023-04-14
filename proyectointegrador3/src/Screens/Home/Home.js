@@ -5,7 +5,7 @@ import './style.css';
 
 let tvPopular = "https://api.themoviedb.org/3/tv/popular?api_key=32a583d4ccec7f702faad954f990f1ba"
 let pelisEnCartel = "https://api.themoviedb.org/3/movie/popular?api_key=32a583d4ccec7f702faad954f990f1ba"
-let search = "https://api.themoviedb.org/3/search/multi?api_key=32a583d4ccec7f702faad954f990f1ba&query="
+let search = `https://api.themoviedb.org/3/search/multi?api_key=32a583d4ccec7f702faad954f990f1ba&query=`
 
 
 class Home extends Component {
