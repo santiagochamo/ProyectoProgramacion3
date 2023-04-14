@@ -5,7 +5,7 @@ class Buscador extends Component {
   constructor(props){
     super(props)
     this.state = {
-      valorInput: "",
+      valorInput: '',
     }
   }
 
@@ -22,7 +22,11 @@ class Buscador extends Component {
       this.setState({
         valorInput: event.target.value
       },
-      () => this.props.metodoQueFiltra(this.state.valorInput, this.props.contenido)
+      () => {
+        let filtro = this.metodoQueFiltra(this.state.valorInput, this.props.contenido)
+        this.props.actualizador(filtro)
+      }
+
       )
   }
 
