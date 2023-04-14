@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import SeriesCard from "../SeriesCard/SeriesCard"
 import PopMoovieCard from "../PopMoovieCard/PopMoovieCard"
+import Loader from '../Loader/Loader';
 import './style.css';
 //nos falta la apikey
 
@@ -22,7 +23,7 @@ class Peliculas extends Component {
             <div className="card-container">
                 {
                     this.props.data.length === 0 ?
-                    <p>Cargando...</p>
+                    <Loader />
                     :
                     this.props.isMovie ?
 
