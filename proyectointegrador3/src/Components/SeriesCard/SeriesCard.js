@@ -33,7 +33,7 @@ class SeriesCard extends Component {
                     </Link>
                
                 <h2 className=''>{this.props.seriePopular.name}</h2>
-                <div>
+                <div className='descripcion'>
                     <p className='' onClick={() => this.mostrarDescripcionSerie()}> {this.state.textoDescripcion} </p>
                     <p className={this.state.descripcion}>{this.props.seriePopular.overview}</p>
                     

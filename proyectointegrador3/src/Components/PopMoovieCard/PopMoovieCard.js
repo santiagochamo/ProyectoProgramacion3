@@ -33,7 +33,7 @@ class PopMoovieCard extends Component {
                     </Link>
                
                 <h2 className=''>{this.props.peliculaCartel.title}</h2>
-                <div className=''>
+                <div className='descripcion'>
                     <p className='' onClick={() => this.mostrarDescripcionPelicula()}> {this.state.textoDescripcion} </p>
                     <p className={this.state.descripcion}>{this.props.peliculaCartel.overview}</p>
                     
