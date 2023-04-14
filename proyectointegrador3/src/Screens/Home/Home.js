@@ -76,7 +76,7 @@ class Home extends Component {
         return (
             <>
                <form onSubmit={(event)=> this.evitarSubmit(event)}>
-        <div className=''>
+        <div className='home-buscador'>
             <div>
                 <label>Busca la serie/pelicula que desees</label>
             </div>
