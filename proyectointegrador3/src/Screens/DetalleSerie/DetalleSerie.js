@@ -31,13 +31,13 @@ class DetalleSerie extends Component {
         return (
             <React.Fragment>
                     { 
-                        this.state.serie.title === 0 ? 
+                        this.state.serie.name === 0 ? 
                         <div>
                             <p>Cargando... </p>
                         </div> 
                         : 
                         <div>
-                            <h2>{this.state.serie.title}</h2>
+                            <h2 className='detalle-titulo'>{this.state.serie.name}</h2>
                             
                             <div className='card-detalle'>
 

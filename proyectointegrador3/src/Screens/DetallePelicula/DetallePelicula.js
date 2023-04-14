@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './style.css';
 
 class DetallePelicula extends Component {
     constructor(props) {
@@ -36,15 +37,15 @@ class DetallePelicula extends Component {
                         </div> 
                         : 
                         <div>
-                            <h2>{this.state.pelicula.title}</h2>
+                            <h2 className='detalle-titulo'>{this.state.pelicula.title}</h2>
                             
-                            <div className=''>
+                            <div className='card-detalle'>
 
-                                <div className=''>
+                                <div className='detalle-img'>
                                     <img src={`https://image.tmdb.org/t/p/w342/${this.state.pelicula.poster_path}`} alt={this.state.pelicula.title} />
                                 </div>
 
-                                <div className=''>
+                                <div className='detalle-texto'>
                                     <h3>Rating: {this.state.pelicula.popularity}</h3>
                                     <h3>Fecha de estreno: {this.state.pelicula.release_date}</h3>
                                     <h3>Duracion: {this.state.pelicula.runtime} Minutos</h3>
