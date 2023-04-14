@@ -91,7 +91,7 @@ class Home extends Component {
                 {
                     this.state.resultadosBusqueda.length > 0 ?
                     <>
-                        <h2>Resultados de busqueda</h2>
+                        <h2 className='home-titulo'>Resultados de busqueda</h2>
                         <Peliculas data={this.state.resultadosBusqueda} isMovie={true}/>
                         
                     </>
