@@ -55,7 +55,7 @@ class Home extends Component {
               resultadosBusqueda:data.results
           }))
           .catch(err => console.log(err))
-          
+          console.log(this.valorInput);
       }
       
       guardarValor(event){
