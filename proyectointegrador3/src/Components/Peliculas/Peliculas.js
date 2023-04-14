@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import SeriesCard from "../SeriesCard/SeriesCard"
 import PopMoovieCard from "../PopMoovieCard/PopMoovieCard"
+import './style.css';
 //nos falta la apikey
 
 class Peliculas extends Component {

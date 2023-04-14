@@ -95,9 +95,9 @@ class Home extends Component {
                     
                     :
                     <>
-                        <h2>Series Populares</h2>
+                        <h2 className=''>Series Populares</h2>
                         <Peliculas data={this.state.seriesPopulares} isMovie={false}/>
-                        <h2>Peliculas En Cartel</h2>
+                        <h2 className=''>Peliculas En Cartel</h2>
                         <Peliculas data={this.state.peliculasEnCartel} isMovie={true}/>
                     </>
                 }

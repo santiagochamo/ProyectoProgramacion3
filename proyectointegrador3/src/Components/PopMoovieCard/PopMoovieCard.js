@@ -26,7 +26,7 @@ class PopMoovieCard extends Component {
 
     render() {
         return (
-            <article className=''>
+            <article className='card'>
               
                     <Link to={`/DetallePelicula/DetallePelicula/id/${this.props.peliculaCartel.id}`}>
                         <img src={`https://image.tmdb.org/t/p/w342/${this.props.peliculaCartel.poster_path}`} alt="Cartel de película" />
@@ -34,11 +34,11 @@ class PopMoovieCard extends Component {
                
                 <h2 className=''>{this.props.peliculaCartel.title}</h2>
                 <div className=''>
-                    <p onClick={() => this.mostrarDescripcionPelicula()}> {this.state.textoDescripcion} </p>
+                    <p className='' onClick={() => this.mostrarDescripcionPelicula()}> {this.state.textoDescripcion} </p>
                     <p className={this.state.descripcion}>{this.props.peliculaCartel.overview}</p>
                     
                 </div>
-                <div className=''>
+                <div className='detalle-button'>
                     <Link to={`/DetallePelicula/DetallePelicula/id/${this.props.peliculaCartel.id}`}>
                         <button>Ir a detalle</button>
                     </Link>

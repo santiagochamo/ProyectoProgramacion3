@@ -26,7 +26,7 @@ class SeriesCard extends Component {
 
     render() {
         return (
-            <article className=''>
+            <article className='card'>
               
                     <Link to={`/DetalleSerie/DetalleSerie/id/${this.props.seriePopular.id}`}>
                         <img src={`https://image.tmdb.org/t/p/w342/${this.props.seriePopular.poster_path}`} alt="Cartel de serie" />
@@ -34,11 +34,11 @@ class SeriesCard extends Component {
                
                 <h2 className=''>{this.props.seriePopular.name}</h2>
                 <div>
-                    <p onClick={() => this.mostrarDescripcionSerie()}> {this.state.textoDescripcion} </p>
+                    <p className='' onClick={() => this.mostrarDescripcionSerie()}> {this.state.textoDescripcion} </p>
                     <p className={this.state.descripcion}>{this.props.seriePopular.overview}</p>
                     
                 </div>
-                <div className=''>
+                <div className='detalle-button'>
                     <Link to={`/DetalleSerie/DetalleSerie/id/${this.props.seriePopular.id}`}>
                         <button>Ir a detalle</button>
                     </Link>
