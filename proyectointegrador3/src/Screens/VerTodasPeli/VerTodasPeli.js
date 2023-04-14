@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Buscador from "../../Components/Buscador/Buscador"
+import BuscadorPeli from "../../Components/BuscadorPeli/BuscadorPeli"
 import Peliculas from "../../Components/Peliculas/Peliculas"
 
 let pelisEnCartel = "https://api.themoviedb.org/3/movie/popular?api_key=32a583d4ccec7f702faad954f990f1ba"
@@ -38,7 +38,7 @@ class VerTodasPeli extends Component {
     return (
       <div>
       
-    <Buscador 
+    <BuscadorPeli 
       actualizador={(data) => this.actualizadorDeEstado(data)}
       contenido = {this.state.backup} 
       />
