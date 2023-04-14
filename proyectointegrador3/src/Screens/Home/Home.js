@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import Peliculas from "../../Components/Peliculas/Peliculas"
-import Buscador from '../../Components/Buscador/Buscador'
 
 
 let tvPopular = "https://api.themoviedb.org/3/tv/popular?api_key=32a583d4ccec7f702faad954f990f1ba"
@@ -38,6 +37,10 @@ class Home extends Component {
         
     }
 
+    evitarSubmit(event){
+        event.preventDefault()
+      }
+
     actualizadorDeEstado(data){
         this.setState({
           seriesPopulares: data,
@@ -52,16 +55,34 @@ class Home extends Component {
               resultadosBusqueda:data.results
           }))
           .catch(err => console.log(err))
+          
       }
-
+      
+      guardarValor(event){
+        this.setState({
+          datoABuscar: event.target.value
+        }
     
+        )
+    }
+    metodoQueEnvia(){
+        console.log("enviamos la info.")
+      }
 //Linea 65 <Buscador metodoQueBusca={ valorInput => this.buscarEnLaApi(valorInput)} />
 //poner un form de busqueda en el "espacio" de abajo          
 
     render(){
         return (
             <>
-               
+               <form onSubmit={(event)=> this.evitarSubmit(event)}>
+        <div>
+            <label>Busca la serie/pelicula que desees</label>
+        </div>
+        <div>
+            <input onChange={(event)=> this.guardarValor(event)} value={this.state.datoABuscar}/>
+        </div>
+        <button onClick={() => this.buscarEnLaApi()}>Enviar consulta</button> 
+    </form>
                 
                 
                 {
