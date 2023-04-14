@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import Peliculas from "../../Components/Peliculas/Peliculas"
+import './style.css';
 
 
 let tvPopular = "https://api.themoviedb.org/3/tv/popular?api_key=32a583d4ccec7f702faad954f990f1ba"
@@ -95,9 +96,9 @@ class Home extends Component {
                     
                     :
                     <>
-                        <h2 className=''>Series Populares</h2>
+                        <h2 className='home-titulo'>Series Populares</h2>
                         <Peliculas data={this.state.seriesPopulares} isMovie={false}/>
-                        <h2 className=''>Peliculas En Cartel</h2>
+                        <h2 className='home-titulo'>Peliculas En Cartel</h2>
                         <Peliculas data={this.state.peliculasEnCartel} isMovie={true}/>
                     </>
                 }
