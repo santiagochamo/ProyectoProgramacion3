@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
+import './style.css';
 
 class Footer extends Component {
   render() {
     return (
-      <p>Thiago Grimberg | Santiago Chamó | Felix Duhalde</p>
+      <div className='footer'>
+        <p>Thiago Grimberg | Santiago Chamó | Felix Duhalde</p>
+      </div>
     )
   }
 }
