@@ -76,13 +76,15 @@ class Home extends Component {
         return (
             <>
                <form onSubmit={(event)=> this.evitarSubmit(event)}>
-        <div>
-            <label>Busca la serie/pelicula que desees</label>
+        <div className=''>
+            <div>
+                <label>Busca la serie/pelicula que desees</label>
+            </div>
+            <div>
+                <input onChange={(event)=> this.guardarValor(event)} value={this.state.datoABuscar}/>
+            </div>
+            <button onClick={() => this.buscarEnLaApi()}>Enviar consulta</button> 
         </div>
-        <div>
-            <input onChange={(event)=> this.guardarValor(event)} value={this.state.datoABuscar}/>
-        </div>
-        <button onClick={() => this.buscarEnLaApi()}>Enviar consulta</button> 
     </form>
                 
                 

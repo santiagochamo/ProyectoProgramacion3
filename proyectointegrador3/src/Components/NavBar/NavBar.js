@@ -37,7 +37,7 @@ function NavBar(){
         </ul>
         <ul className="user">
             <li className='logo'>
-                <img src="src\Components\NavBar\img\download.jpg" alt="Logo"/>
+                <img src="./img/download.jpg" alt="Logo"/>
             </li>
         </ul>
         </nav>
