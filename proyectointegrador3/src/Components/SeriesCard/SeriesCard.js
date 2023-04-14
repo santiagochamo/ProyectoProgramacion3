@@ -29,10 +29,10 @@ class SeriesCard extends Component {
             <article className='card'>
               
                     <Link to={`/DetalleSerie/DetalleSerie/id/${this.props.seriePopular.id}`}>
-                        <img src={`https://image.tmdb.org/t/p/w342/${this.props.seriePopular.poster_path}`} alt="Cartel de serie" />
+                        <img className='card-img' src={`https://image.tmdb.org/t/p/w342/${this.props.seriePopular.poster_path}`} alt="Cartel de serie" />
                     </Link>
                
-                <h2 className=''>{this.props.seriePopular.name}</h2>
+                <h2 className='card-titulo'>{this.props.seriePopular.name}</h2>
                 <div className='descripcion'>
                     <p className='' onClick={() => this.mostrarDescripcionSerie()}> {this.state.textoDescripcion} </p>
                     <p className={this.state.descripcion}>{this.props.seriePopular.overview}</p>

@@ -29,10 +29,10 @@ class PopMoovieCard extends Component {
             <article className='card'>
               
                     <Link to={`/DetallePelicula/DetallePelicula/id/${this.props.peliculaCartel.id}`}>
-                        <img src={`https://image.tmdb.org/t/p/w342/${this.props.peliculaCartel.poster_path}`} alt="Cartel de película" />
+                        <img className='card-img' src={`https://image.tmdb.org/t/p/w342/${this.props.peliculaCartel.poster_path}`} alt="Cartel de película" />
                     </Link>
                
-                <h2 className=''>{this.props.peliculaCartel.title}</h2>
+                <h2 className='card-titulo'>{this.props.peliculaCartel.title}</h2>
                 <div className='descripcion'>
                     <p className='' onClick={() => this.mostrarDescripcionPelicula()}> {this.state.textoDescripcion} </p>
                     <p className={this.state.descripcion}>{this.props.peliculaCartel.overview}</p>
