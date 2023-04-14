@@ -26,6 +26,11 @@ import './style.css';
 function NavBar(){
     return(
         <nav>
+        <ul className="user">
+            <li className='logo'>
+                <img className='imagen' src="src\Components\NavBar\img\palomitas-maiz-tina-rayas_157999-54.avif" alt="Logo"/>
+            </li>
+        </ul>
         <ul className="main-nav">
             {
                 opciones.map((elm, idx) => <li>
@@ -35,11 +40,7 @@ function NavBar(){
                 </li>)
             }
         </ul>
-        <ul className="user">
-            <li className='logo'>
-                <img src="./img/download.jpg" alt="Logo"/>
-            </li>
-        </ul>
+        
         </nav>
     )
 }

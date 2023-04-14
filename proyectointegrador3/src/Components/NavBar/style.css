@@ -1,6 +1,6 @@
-.logo {
-    height: 100px;
-    width: 100px;
+.imagen{
+    height: 200px;
+    width: 200px;
 }
 nav{
     display: flex;
@@ -21,12 +21,21 @@ nav ul {
 }
 
 .main-nav li,
+
+.user{
+    height: 200px;
+    width: 200px;
+    list-style: none;
+    text-transform: uppercase;
+    
+}
 .user li {
-    margin: 0 20px;
+    margin: 0px 20px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
+    
 }
 
 .main-nav li:first-child {
@@ -34,8 +43,8 @@ nav ul {
 }
 
 .user img {
-    width: 30px;
-    border-radius: 90%;
+    
+    border-radius: 10%;
     margin-left: 10px;
 }
 
