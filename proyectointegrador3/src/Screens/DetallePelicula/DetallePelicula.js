@@ -37,7 +37,7 @@ class DetallePelicula extends Component {
                         </div> 
                         : 
                         <div>
-                            <h2 className='detalle-titulo'>{this.state.pelicula.title}</h2>
+                            <h2 className='detalle-titulo'>{this.state.pelicula.titulo}</h2>
                             
                             <div className='card-detalle'>
 
