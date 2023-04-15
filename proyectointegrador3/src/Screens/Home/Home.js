@@ -83,7 +83,7 @@ class Home extends Component {
             <div>
                 <input onChange={(event)=> this.guardarValor(event)} value={this.state.datoABuscar}/>
             </div>
-            <button onClick={() => this.buscarEnLaApi()}>Enviar consulta</button> 
+            <button onClick={() => this.buscarEnLaApi(this.state.datoABuscar)}>Enviar consulta</button> 
         </div>
     </form>
                 

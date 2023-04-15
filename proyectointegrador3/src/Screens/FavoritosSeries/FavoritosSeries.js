@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Peliculas from "../../Components/Peliculas/Peliculas"
-class Favoritos extends Component {
+class FavoritosSeries extends Component {
 
     constructor(props){
         super(props)
@@ -16,7 +16,7 @@ class Favoritos extends Component {
             Promise.all(
                 storageArray.map(id => {
                     return(
-                        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=32a583d4ccec7f702faad954f990f1ba/${id}`)
+                        fetch(`https://api.themoviedb.org/3/tv/popular?api_key=32a583d4ccec7f702faad954f990f1ba/${id}`)
                         .then(resp => resp.json())
                         .then(data => data )
                     )
@@ -37,6 +37,4 @@ class Favoritos extends Component {
     }
 }
 
-export default Favoritos
-
-
+export default FavoritosSeries
