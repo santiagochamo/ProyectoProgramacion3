@@ -19,7 +19,7 @@ import './style.css';
     },
     {
         nombre:'Favoritos',
-        path: '/Favoritos'
+        path: '/favoritos'
     }
 ]
 
