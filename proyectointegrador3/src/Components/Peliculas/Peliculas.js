@@ -28,7 +28,7 @@ class Peliculas extends Component {
                     this.props.isMovie ?
 
                     this.props.data.map((PeliPop, idx)=>
-                    <PopMoovieCard key={PeliPop.name + idx} peliculaCartel={PeliPop} />
+                    <PopMoovieCard key={PeliPop.title + idx} peliculaCartel={PeliPop} />
                     )
                     
                     :

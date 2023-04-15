@@ -23,15 +23,29 @@ class VerTodasSeries extends Component {
   componentDidMount(){
     
     fetch(tvPopular)
-        .then(resp => resp.json())
+        .then(res => res.json())
             .then(data => this.setState({
                 series: data.results,
-                backup: data.results
+                backup: data.results,
+                cargarMas:''
 
             }))
         .catch(e => console.log(e)) 
 
     
+}
+
+masSeries() {
+  let cargarMasSeries = `https://api.themoviedb.org/3/tv/popular?api_key=32a583d4ccec7f702faad954f990f1ba&page=${this.state.cargarMas + 1}`
+  fetch(cargarMasSeries)
+    .then(res => res.json())
+    .then(
+      data => this.setState({
+        series: this.state.series.concat(data.results),
+        backup: this.state.series.concat(data.results),
+        cargarMas: data.page + 1,
+      }))
+    .catch(err => console.log(err))
 }
 
 render() {
@@ -43,7 +57,9 @@ render() {
       contenido = {this.state.backup} 
       />
       <Peliculas data={this.state.series}/>
-      
+      <button onClick={() => this.masSeries()}>
+          Cargar Mas Series
+        </button>
     
     </div>
   )

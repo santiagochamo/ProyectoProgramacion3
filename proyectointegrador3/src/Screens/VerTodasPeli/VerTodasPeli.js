@@ -10,7 +10,8 @@ class VerTodasPeli extends Component {
     super(props)
     this.state = {
       peliculas:[],
-      backup: []
+      backup: [],
+      cargarMas: ''
     }
   }
 
@@ -23,7 +24,7 @@ class VerTodasPeli extends Component {
   componentDidMount(){
     
     fetch(pelisEnCartel)
-        .then(resp => resp.json())
+        .then(res => res.json())
             .then(data => this.setState({
                 peliculas: data.results,
                 backup: data.results
@@ -32,6 +33,19 @@ class VerTodasPeli extends Component {
         .catch(e => console.log(e)) 
 
     
+}
+
+masPeliculas() {
+  let cargarMasPeliculas = `https://api.themoviedb.org/3/movie/popular?api_key=32a583d4ccec7f702faad954f990f1ba&page=${this.state.cargarMas + 1}`
+  fetch(cargarMasPeliculas)
+    .then(res => res.json())
+    .then(
+      data => this.setState({
+        peliculas: this.state.peliculas.concat(data.results),
+        backup: this.state.peliculas.concat(data.results),
+        cargarMas: data.page + 1,
+      }))
+    .catch(err => console.log(err))
 }
 
   render() {
@@ -43,7 +57,9 @@ class VerTodasPeli extends Component {
       contenido = {this.state.backup} 
       />
       <Peliculas data={this.state.peliculas}/>
-      
+      <button onClick={() => this.masPeliculas()}>
+          Cargar Mas Peliculas
+        </button>
     
     </div>
       
