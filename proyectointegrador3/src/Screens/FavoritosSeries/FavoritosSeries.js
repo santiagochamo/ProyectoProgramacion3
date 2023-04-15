@@ -16,7 +16,7 @@ class FavoritosSeries extends Component {
             Promise.all(
                 storageArray.map(id => {
                     return(
-                        fetch(`https://api.themoviedb.org/3/tv/popular?api_key=32a583d4ccec7f702faad954f990f1ba/${id}`)
+                        fetch(`https://api.themoviedb.org/3/tv/${id}?api_key=32a583d4ccec7f702faad954f990f1ba`)
                         .then(resp => resp.json())
                         .then(data => data )
                     )
