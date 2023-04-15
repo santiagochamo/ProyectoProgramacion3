@@ -26,7 +26,7 @@
     box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);
 }
 
-.card.img{
+.card-img{
     max-width: 100%;
 }
 
@@ -41,6 +41,15 @@
 .card-titulo{
     text-align: center;
 }
+
+@media (max-width:853px){
+    .card{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+}
+
 
 @media (max-width:400px){
     .card{

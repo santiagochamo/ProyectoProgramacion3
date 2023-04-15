@@ -19,7 +19,7 @@ import './style.css';
     },
     {
         nombre:'Favoritos',
-        path: '/Favoritos'
+        path: '/favoritos'
     }
 ]
 
@@ -28,7 +28,7 @@ function NavBar(){
         <nav>
         <ul className="user">
             <li className='logo'>
-                <img className='imagen' src="src\Components\NavBar\img\palomitas-maiz-tina-rayas_157999-54.avif" alt="Logo"/>
+                <img className='imagen' src={require("./img/download2.avif")} alt="Logo"/>
             </li>
         </ul>
         <ul className="main-nav">
