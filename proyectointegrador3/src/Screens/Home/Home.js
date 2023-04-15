@@ -48,9 +48,6 @@ class Home extends Component {
           pelisEnCartel: data
         })
       }
-    
-    //function MiComponente() {
-        //const [valorInput, setValorInput] = useState('');
 
       buscarEnLaApi(valorInput){
           fetch(search+valorInput)
